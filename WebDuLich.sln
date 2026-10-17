@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37012.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDuLich", "WebDuLich.csproj", "{3D9AEF01-AA2B-4AD6-B784-2854E89A02E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D9AEF01-AA2B-4AD6-B784-2854E89A02E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D9AEF01-AA2B-4AD6-B784-2854E89A02E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D9AEF01-AA2B-4AD6-B784-2854E89A02E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D9AEF01-AA2B-4AD6-B784-2854E89A02E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A0FED3EE-A077-4943-BB46-A1E79A86277F}
+	EndGlobalSection
+EndGlobal

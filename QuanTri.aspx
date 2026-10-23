@@ -83,7 +83,7 @@
                     <asp:PlaceHolder ID="phAdminMenu" runat="server" Visible="false">
                         <h3>Quản trị hệ thống</h3>
                         <ul>
-                            <li><a href="#">Quản lý Tour</a></li>
+                            <li><a href="QuanLyTour.aspx">Quản lý Tour</a></li>
                             <li><a href="#">Quản lý Đơn hàng</a></li>
                             <li><a href="#">Quản lý Người dùng</a></li>
                         </ul>

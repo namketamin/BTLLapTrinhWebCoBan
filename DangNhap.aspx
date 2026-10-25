@@ -27,8 +27,8 @@
                     <a href="giohang.aspx" class="btn btn-primary">Giỏ hàng</a>
                 </div>
 
-                <button class="menu-toggle" id="menuToggle"
-                        aria-label="Mở menu">&#9776;</button>
+                <!-- Bổ sung type="button" vào nút này -->
+                <button type="button" class="menu-toggle" id="menuToggle" aria-label="Mở menu">&#9776;</button>
             </div>
         </header>
 

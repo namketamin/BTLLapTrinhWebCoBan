@@ -91,33 +91,35 @@
 
                 <asp:Label ID="lblThongBao" runat="server" Font-Bold="true" style="display:block; margin-bottom:15px;"></asp:Label>
 
-                <!-- Bảng dữ liệu -->
-                <asp:GridView ID="gvTour" runat="server" AutoGenerateColumns="False" CssClass="grid-table" DataKeyNames="MaTour" OnRowCommand="gvTour_RowCommand">
-                    <Columns>
-                        <asp:BoundField DataField="MaTour" HeaderText="Mã" ItemStyle-Width="40px" ItemStyle-HorizontalAlign="Center" />
-                        <asp:TemplateField HeaderText="Ảnh" ItemStyle-Width="90px" ItemStyle-HorizontalAlign="Center">
-                            <ItemTemplate>
-                                <img src='<%# Eval("HinhAnh") %>' style="width:70px; height:45px; object-fit:cover; border-radius:4px;" />
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:BoundField DataField="TenTour" HeaderText="Tên Tour" />
-                        <asp:BoundField DataField="DiaDiem" HeaderText="Địa Điểm" ItemStyle-Width="100px" />
-                        <asp:BoundField DataField="GiaTour" HeaderText="Giá (VNĐ)" DataFormatString="{0:N0}" ItemStyle-Width="110px" ItemStyle-HorizontalAlign="Right" />
-                        <asp:TemplateField HeaderText="Trạng thái" ItemStyle-Width="90px" ItemStyle-HorizontalAlign="Center">
-                            <ItemTemplate>
-                                <span class='<%# Convert.ToInt32(Eval("TrangThai")) == 1 ? "status-badge status-1" : "status-badge status-0" %>'>
-                                    <%# Convert.ToInt32(Eval("TrangThai")) == 1 ? "Hiển thị" : "Đã ẩn" %>
-                                </span>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Hành động" ItemStyle-Width="120px" ItemStyle-HorizontalAlign="Center">
-                            <ItemTemplate>
-                                <asp:LinkButton ID="btnEdit" runat="server" CommandName="Sua" CommandArgument='<%# Eval("MaTour") %>' CssClass="btn-action btn-edit">Sửa</asp:LinkButton>
-                                <asp:LinkButton ID="btnDelete" runat="server" CommandName="Xoa" CommandArgument='<%# Eval("MaTour") %>' CssClass="btn-action btn-delete" OnClientClick="return confirm('Xóa tour này khỏi hệ thống?');">Xóa</asp:LinkButton>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                    </Columns>
-                </asp:GridView>
+                <div class="table-responsive">
+                    <!-- Bảng dữ liệu -->
+                    <asp:GridView ID="gvTour" runat="server" AutoGenerateColumns="False" CssClass="grid-table" DataKeyNames="MaTour" OnRowCommand="gvTour_RowCommand">
+                        <Columns>
+                            <asp:BoundField DataField="MaTour" HeaderText="Mã" ItemStyle-Width="40px" ItemStyle-HorizontalAlign="Center" />
+                            <asp:TemplateField HeaderText="Ảnh" ItemStyle-Width="90px" ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate>
+                                    <img src='<%# Eval("HinhAnh") %>' style="width:70px; height:45px; object-fit:cover; border-radius:4px;" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:BoundField DataField="TenTour" HeaderText="Tên Tour" />
+                            <asp:BoundField DataField="DiaDiem" HeaderText="Địa Điểm" ItemStyle-Width="100px" />
+                            <asp:BoundField DataField="GiaTour" HeaderText="Giá (VNĐ)" DataFormatString="{0:N0}" ItemStyle-Width="110px" ItemStyle-HorizontalAlign="Right" />
+                            <asp:TemplateField HeaderText="Trạng thái" ItemStyle-Width="90px" ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate>
+                                    <span class='<%# Convert.ToInt32(Eval("TrangThai")) == 1 ? "status-badge status-1" : "status-badge status-0" %>'>
+                                        <%# Convert.ToInt32(Eval("TrangThai")) == 1 ? "Hiển thị" : "Đã ẩn" %>
+                                    </span>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Hành động" ItemStyle-Width="120px" ItemStyle-HorizontalAlign="Center">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="btnEdit" runat="server" CommandName="Sua" CommandArgument='<%# Eval("MaTour") %>' CssClass="btn-action btn-edit">Sửa</asp:LinkButton>
+                                    <asp:LinkButton ID="btnDelete" runat="server" CommandName="Xoa" CommandArgument='<%# Eval("MaTour") %>' CssClass="btn-action btn-delete" OnClientClick="return confirm('Xóa tour này khỏi hệ thống?');">Xóa</asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                </div>
             </div>
         </main>
 

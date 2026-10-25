@@ -62,9 +62,9 @@
                      <!-- 3. Nút Giỏ hàng luôn hiển thị -->
                      <a href="giohang.aspx" class="btn btn-primary">Giỏ hàng</a>
                  </div>
+                
+                 <button type="button" class="menu-toggle" id="menuToggle" aria-label="Mở menu">&#9776;</button>
 
-                 <button class="menu-toggle" id="menuToggle"
-                         aria-label="Mở menu">&#9776;</button>
              </div>
          </header>
 
@@ -133,6 +133,19 @@
 </html>
 <!-- JavaScript Kiểm tra form sửa thông tin -->
     <script>
+        // 1. CHỨC NĂNG MỞ MENU TRÊN ĐIỆN THOẠI
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menuToggle");
+            const navbar = document.getElementById("navbar");
+
+            if (menuToggle && navbar) {
+                menuToggle.addEventListener("click", function (e) {
+                    e.preventDefault(); // Chặn tải lại trang
+                    navbar.classList.toggle("show");
+                });
+            }
+        });
+
         function validateForm() {
             // Lấy ID của các ô input do ASP.NET sinh ra (Dùng querySelector tìm đuôi ID)
             var txtHoTen = document.querySelector('input[id$="txtHoTen"]');

@@ -1,5 +1,4 @@
-﻿
-/* ===== CAU HINH CHUNG ===== */
+﻿/* ===== CAU HINH CHUNG ===== */
 * {
     margin: 0;
     padding: 0;
@@ -61,7 +60,7 @@ img {
     background: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     position: relative;
-    z-index: 10;
+    z-index: 1000;
 }
 
 .header-content {
@@ -114,7 +113,9 @@ img {
     border: none;
     font-size: 27px;
     cursor: pointer;
+    z-index: 1001; /* Fix nút 3 gạch bị đè */
 }
+
 /* ===== USER MENU ===== */
 .user-dropdown {
     display: flex;
@@ -127,7 +128,6 @@ img {
     color: #173b67;
     font-size: 15px;
 }
-
 
 /* ===== BUTTON ===== */
 .btn {
@@ -144,6 +144,7 @@ img {
 .btn-primary {
     background: #087fbd;
     color: #fff;
+    border: 1px solid transparent;
 }
 
     .btn-primary:hover {
@@ -154,6 +155,7 @@ img {
     border: 1px solid #087fbd;
     color: #087fbd;
     padding: 8px 14px;
+    background: transparent;
 }
 
     .btn-outline:hover {
@@ -179,6 +181,10 @@ img {
 
 .banner-home {
     background-image: url("images/banner-trang-chu.png");
+}
+
+.banner-tours {
+    background-image: url("images/banner-trang-ds.jpg");
 }
 
 .banner-overlay {
@@ -238,7 +244,7 @@ img {
     font-weight: bold;
 }
 
-/* ===== DANH SACH TOUR ===== */
+/* ===== DANH SACH TOUR & DIEM DEN ===== */
 .tour-list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -310,11 +316,6 @@ img {
         font-weight: normal;
     }
 
-/* ===== DIEM DEN ===== */
-.section-title {
-    margin-bottom: 30px;
-}
-
 .destination-list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -354,181 +355,6 @@ img {
         font-weight: bold;
     }
 
-/* ===== CTA ===== */
-.cta-section {
-    padding: 55px 0;
-    background: #087fbd;
-    color: #fff;
-}
-
-    .cta-section h2 {
-        font-size: 30px;
-        margin-bottom: 12px;
-    }
-
-    .cta-section p {
-        margin-bottom: 25px;
-    }
-
-/* ===== FOOTER ===== */
-.footer {
-    background: #172b3a;
-    color: #dce5eb;
-}
-
-.footer-content {
-    padding-top: 45px;
-    padding-bottom: 40px;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1.5fr;
-    gap: 40px;
-}
-
-.footer-logo {
-    display: inline-block;
-    margin-bottom: 15px;
-    color: #fff;
-}
-
-.footer-content h3 {
-    color: #fff;
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-.footer-content p,
-.footer-content > div > a:not(.logo) {
-    font-size: 14px;
-    color: #c3d0d8;
-}
-
-.footer-content > div > a:not(.logo) {
-    display: block;
-    margin-bottom: 8px;
-}
-
-.footer-content a:hover {
-    color: #ff9f1c;
-}
-
-.footer-bottom {
-    padding: 18px;
-    border-top: 1px solid #344956;
-    text-align: center;
-    font-size: 13px;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-    .header-content {
-        flex-wrap: wrap;
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-
-    .navbar {
-        gap: 15px;
-    }
-
-    .header-actions {
-        gap: 10px;
-    }
-
-    .tour-list,
-    .destination-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .footer-content {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 650px) {
-    .header-content {
-        position: relative;
-    }
-
-    .menu-toggle {
-        display: block;
-        order: 3;
-    }
-
-    .header-actions {
-        margin-left: auto;
-    }
-
-    .navbar {
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        gap: 0;
-        order: 4;
-    }
-
-        .navbar.show {
-            display: flex;
-        }
-
-        .navbar a {
-            padding: 12px 0;
-            border-top: 1px solid #eee;
-        }
-
-    .header-actions .btn {
-        padding: 9px 12px;
-    }
-
-    .banner {
-        min-height: 380px;
-    }
-
-        .banner h1 {
-            font-size: 34px;
-        }
-
-    .banner-description {
-        font-size: 15px;
-    }
-
-    .section {
-        padding: 45px 0;
-    }
-
-        .section h2,
-        .section-title h2,
-        .cta-section h2 {
-            font-size: 25px;
-        }
-
-    .section-heading {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .tour-list,
-    .destination-list,
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
-
-    .tour-card img {
-        height: 230px;
-    }
-
-    .destination-card {
-        height: 230px;
-    }
-}
-
-
-
-/* ===== BANNER DANH SACH TOUR ===== */
-.banner-tours {
-    background-image: url("images/banner-trang-ds.jpg");
-}
-
 /* ===== TIM KIEM TOUR ===== */
 .tour-filter {
     display: flex;
@@ -536,8 +362,7 @@ img {
     margin-bottom: 20px;
 }
 
-    .tour-filter input,
-    .tour-filter select {
+    .tour-filter input, .tour-filter select {
         min-width: 0;
         padding: 13px;
         border: 1px solid #d5dfe5;
@@ -554,8 +379,7 @@ img {
         width: 210px;
     }
 
-        .tour-filter input:focus,
-        .tour-filter select:focus {
+        .tour-filter input:focus, .tour-filter select:focus {
             outline: 2px solid #087fbd;
             border-color: #087fbd;
         }
@@ -572,16 +396,6 @@ img {
     color: #687780;
 }
 
-@media (max-width: 650px) {
-    .tour-filter {
-        flex-direction: column;
-    }
-
-        .tour-filter select {
-            width: 100%;
-        }
-}
-
 /* ===== PHAN TRANG ===== */
 .pagination {
     display: flex;
@@ -591,7 +405,7 @@ img {
     margin-top: 35px;
 }
 
-    .pagination button {
+    .pagination button, .pagination a {
         min-width: 40px;
         height: 40px;
         padding: 0 12px;
@@ -601,21 +415,16 @@ img {
         color: #263238;
         cursor: pointer;
         font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-        .pagination button:hover,
-        .pagination button.active {
+        .pagination button:hover, .pagination a:hover, .pagination .active {
             background: #087fbd;
             color: #fff;
             border-color: #087fbd;
         }
-
-        .pagination button:disabled {
-            opacity: 0.4;
-            cursor: not-allowed;
-        }
-
-
 
 /* ===== CHI TIET TOUR ===== */
 .tour-breadcrumb {
@@ -692,33 +501,6 @@ img {
         margin-bottom: 9px;
     }
 
-.itinerary-item {
-    display: flex;
-    gap: 15px;
-    padding: 18px 0;
-    border-bottom: 1px solid #e4e9ed;
-}
-
-.day-label {
-    flex-shrink: 0;
-    height: fit-content;
-    padding: 5px 10px;
-    border-radius: 4px;
-    background: #e5f4fc;
-    color: #087fbd;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.itinerary-item h4 {
-    margin-bottom: 6px;
-}
-
-.itinerary-item p {
-    color: #687780;
-    font-size: 14px;
-}
-
 .detail-sidebar {
     position: sticky;
     top: 20px;
@@ -759,33 +541,7 @@ img {
     margin-top: 22px;
 }
 
-@media (max-width: 800px) {
-    .detail-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .detail-sidebar {
-        position: static;
-    }
-}
-
-@media (max-width: 550px) {
-    .detail-image {
-        height: 240px;
-    }
-
-    .detail-main h2 {
-        font-size: 24px;
-    }
-
-    .detail-highlights {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-
-/* Trang giới thiệu */
+/* ===== TRANG GIOI THIEU ===== */
 .about-description {
     color: #666;
     margin-top: 15px;
@@ -811,20 +567,12 @@ img {
     margin-bottom: 15px;
 }
 
-.about-text .btn {
-    display: inline-block;
-    margin-top: 10px;
-}
-
 .about-image img {
-    display: block;
     width: 100%;
     height: 320px;
-    object-fit: cover;
     border-radius: 10px;
 }
 
-/* Các giá trị */
 .values-list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -836,7 +584,7 @@ img {
     padding: 28px 22px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
 }
 
 .value-icon {
@@ -854,41 +602,7 @@ img {
     line-height: 1.7;
 }
 
-/* Phần cuối trang */
-.about-cta h2 {
-    color: #163b65;
-    margin-bottom: 15px;
-}
-
-.about-cta p {
-    color: #666;
-    line-height: 1.7;
-    margin-bottom: 22px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .about-intro {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .about-image img {
-        height: 250px;
-    }
-
-    .values-list {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Trang liên hệ */
-.contact-description {
-    color: #666;
-    line-height: 1.7;
-    margin-top: 15px;
-}
-
+/* ===== TRANG LIEN HE ===== */
 .contact-layout {
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
@@ -897,24 +611,16 @@ img {
     margin-top: 35px;
 }
 
-.contact-info,
-.contact-form-box {
+.contact-info, .contact-form-box {
     padding: 30px;
     background: #fff;
     border-radius: 10px;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
 }
 
-    .contact-info h2,
-    .contact-form-box h2 {
+    .contact-info h2, .contact-form-box h2 {
         color: #163b65;
         margin-bottom: 18px;
-    }
-
-    .contact-info > p {
-        color: #666;
-        line-height: 1.8;
-        margin-bottom: 25px;
     }
 
 .contact-item {
@@ -939,7 +645,6 @@ img {
     line-height: 1.6;
 }
 
-/* Form liên hệ */
 .contact-form-box .form-group {
     margin-bottom: 18px;
 }
@@ -947,12 +652,10 @@ img {
 .contact-form-box label {
     display: block;
     margin-bottom: 8px;
-    color: #333;
     font-weight: 500;
 }
 
-.contact-form-box input,
-.contact-form-box textarea {
+.contact-form-box input, .contact-form-box textarea {
     width: 100%;
     padding: 12px 14px;
     border: 1px solid #d8dee8;
@@ -962,16 +665,104 @@ img {
     outline: none;
 }
 
-    .contact-form-box input:focus,
-    .contact-form-box textarea:focus {
-        border-color: #1685c5;
-    }
-
 .contact-form-box textarea {
     resize: vertical;
 }
 
-.error-message {
+/* ===== DANG NHAP / DANG KY ===== */
+.login-page, .register-page {
+    padding: 60px 0;
+    background: #f7f9fc;
+}
+
+.login-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.register-container {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    gap: 50px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.login-intro h1, .register-intro h2 {
+    color: #173b67;
+    margin-bottom: 16px;
+}
+
+.login-intro img, .register-intro img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-top: 20px;
+}
+
+.login-intro img {
+    height: 280px;
+}
+
+.register-intro img {
+    height: 500px;
+}
+
+.login-box, .register-box {
+    background: #fff;
+    padding: 32px;
+    border-radius: 14px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+}
+
+    .login-box h2, .register-box h1 {
+        color: #173b67;
+        margin-bottom: 10px;
+    }
+
+    .login-box .form-group label, .register-box .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #26384d;
+    }
+
+    .login-box .form-group input, .register-box .form-group input {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid #d7deea;
+        border-radius: 7px;
+        font-size: 15px;
+        outline: none;
+    }
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+    .login-options a, .register-link a, .login-link a {
+        color: #2478d4;
+        text-decoration: none;
+    }
+
+.login-button, .register-button {
+    width: 100%;
+    border: none;
+    padding: 13px;
+    font-size: 16px;
+}
+
+/* CSS cho Lỗi Form Form */
+.error-message, .form-error {
     display: block;
     color: #dc3545;
     font-size: 13px;
@@ -988,218 +779,391 @@ img {
         color: #198754;
     }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .contact-layout {
-        grid-template-columns: 1fr;
+/* ===== CTA ===== */
+.cta-section {
+    padding: 55px 0;
+    background: #087fbd;
+    color: #fff;
+}
+
+    .cta-section h2 {
+        font-size: 30px;
+        margin-bottom: 12px;
     }
 
-    .contact-info,
-    .contact-form-box {
-        padding: 22px;
+    .cta-section p {
+        margin-bottom: 25px;
     }
-}
-.error-message {
-    display: block;
-    color: #dc3545;
-    font-size: 13px;
-    margin-top: 5px;
-}
 
-.success-message {
-    color: #198754;
+/* ===== FOOTER ===== */
+.footer {
+    background: #172b3a;
+    color: #dce5eb;
 }
 
-
-
-/* ===== DANG NHAP DANG KY ===== */
-.login-page,
-.register-page {
-    padding: 60px 0;
-    background: #f7f9fc;
-}
-
-.login-container {
+.footer-content {
+    padding-top: 45px;
+    padding-bottom: 40px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-    max-width: 1000px;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 40px;
 }
 
-.login-intro h1,
-.register-intro h2 {
-    color: #173b67;
-    margin-bottom: 16px;
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #fff;
 }
 
-.login-intro p,
-.register-intro p,
-.login-description,
-.register-description {
-    color: #68778a;
-    line-height: 1.7;
+.footer-content h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 15px;
 }
 
-.login-intro img{
+.footer-content p, .footer-content > div > a:not(.logo) {
+    font-size: 14px;
+    color: #c3d0d8;
+}
+
+.footer-content > div > a:not(.logo) {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-content a:hover {
+    color: #ff9f1c;
+}
+
+.footer-bottom {
+    padding: 18px;
+    border-top: 1px solid #344956;
+    text-align: center;
+    font-size: 13px;
+}
+
+
+/* ==========================================================================
+   BỘ CSS RESPONSIVE ĐÃ ĐƯỢC GỘP CHUẨN XÁC
+   ========================================================================== */
+
+/* 1. CUỘN NGANG CHO BẢNG ADMIN */
+.table-responsive {
     width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 14px;
-    margin-top: 20px;
-}
-.register-intro img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 14px;
-    margin-top: 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 15px;
 }
 
-.login-box,
-.register-box {
-    background: #fff;
-    padding: 32px;
-    border-radius: 14px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
-}
-
-    .login-box h2,
-    .register-box h1 {
-        color: #173b67;
-        margin: 0 0 10px;
+/* 2. TABLET (≤ 992px) */
+@media (max-width: 992px) {
+    .header-content {
+        flex-wrap: wrap;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 
-.login-description,
-.register-description {
-    margin-bottom: 24px;
+    .navbar {
+        gap: 15px;
+    }
+
+    .header-actions {
+        gap: 10px;
+    }
+
+    .tour-list, .destination-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .detail-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .detail-sidebar {
+        position: static;
+    }
+
+    .account-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .about-intro, .contact-layout, .register-container, .login-container {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .register-intro, .login-intro {
+        display: none;
+    }
 }
 
-.login-box .form-group,
-.register-box .form-group {
-    margin-bottom: 18px;
-}
+/* 3. MOBILE (≤ 768px) */
+@media (max-width: 768px) {
+    /* Header & Menu */
+    .header-content {
+        position: relative;
+    }
 
-    .login-box .form-group label,
-    .register-box .form-group label {
+    .menu-toggle {
         display: block;
-        margin-bottom: 8px;
-        font-weight: 600;
-        color: #26384d;
+        order: 3;
     }
 
-    .login-box .form-group input,
-    .register-box .form-group input {
+    .header-actions {
+        margin-left: auto;
+        margin-right: 10px;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
         width: 100%;
-        padding: 12px 14px;
-        border: 1px solid #d7deea;
-        border-radius: 7px;
-        font-size: 15px;
-        outline: none;
-        box-sizing: border-box;
+        gap: 0;
+        order: 4;
+        padding: 15px 0;
+        border-top: 1px solid #eee;
+        margin-top: 10px;
+        background: #fff;
     }
 
-        .login-box .form-group input:focus,
-        .register-box .form-group input:focus {
-            border-color: #2478d4;
+        .navbar.show {
+            display: flex;
         }
 
-.login-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    margin-bottom: 22px;
-}
+        .navbar a {
+            padding: 12px 0;
+            border-top: 1px solid #eee;
+        }
 
-.remember-option,
-.terms-option {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    color: #526174;
-}
-
-.login-options a,
-.register-link a,
-.login-link a {
-    color: #2478d4;
-    text-decoration: none;
-}
-
-.login-button,
-.register-button {
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    padding: 13px;
-    font-size: 16px;
-}
-
-.register-link,
-.login-link {
-    text-align: center;
-    margin-top: 22px;
-    color: #68778a;
-}
-
-.form-error {
-    display: block;
-    color: #dc3545;
-    font-size: 13px;
-    margin-top: 5px;
-}
-
-.form-notice {
-    color: #247a45;
-    font-size: 14px;
-    line-height: 1.6;
-    margin-top: 12px;
-}
-
-.register-container {
-    display: grid;
-    grid-template-columns: 1fr 0.9fr;
-    gap: 50px;
-    align-items: center;
-    max-width: 1000px;
-}
-
-.terms-option {
-    align-items: flex-start;
-    font-size: 14px;
-    margin: 8px 0;
-}
-
-    .terms-option input,
-    .remember-option input {
-        margin-top: 3px;
+    .header-actions .btn {
+        padding: 9px 12px;
     }
 
-@media (max-width: 768px) {
-    .login-container,
-    .register-container {
+    /* Banner & Section */
+    .banner {
+        min-height: 380px;
+        padding: 60px 0;
+    }
+
+        .banner h1 {
+            font-size: 30px;
+            line-height: 1.3;
+        }
+
+    .banner-description {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 45px 0;
+    }
+
+        .section h2, .section-title h2, .cta-section h2 {
+            font-size: 25px;
+        }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Grids */
+    .tour-list, .destination-list, .footer-content, .values-list {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tour-card img, .destination-card, .about-image img {
+        height: 240px;
+    }
+
+    /* Tìm kiếm Tour */
+    .tour-filter, .search-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+        .tour-filter input, .tour-filter select, .tour-filter button, .search-bar input, .search-bar select, .search-bar button {
+            width: 100%;
+            flex: none;
+        }
+
+    /* Chi tiết Tour */
+    .detail-image {
+        height: 240px;
+    }
+
+    .detail-main h2 {
+        font-size: 24px;
+    }
+
+    .detail-highlights {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    /* Giỏ hàng */
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+        .cart-item img {
+            width: 100%;
+            height: 180px;
+            margin-right: 0;
+        }
+
+        .cart-item > div:last-child {
+            width: 100%;
+            text-align: left;
+        }
+
+        .cart-item .btn {
+            width: 100%;
+            margin-bottom: 8px;
+        }
+
+    /* Form & Modal Admin */
+    .form-group-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .admin-container {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+        .admin-container > div:first-child {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+            .admin-container > div:first-child button {
+                width: 100%;
+            }
+
+    .modal-content {
+        padding: 15px;
+        width: 96%;
+        max-height: 95vh;
+    }
+
+    .modal-footer {
+        display: flex;
+        gap: 10px;
+    }
+
+        .modal-footer button, .modal-footer input[type="submit"] {
+            flex: 1;
+            width: 100%;
+        }
+
+    /* Login & Contact */
+    .login-container, .register-container {
         gap: 28px;
     }
 
-    .login-page,
-    .register-page {
+    .login-page, .register-page {
         padding: 35px 0;
     }
 
-    .login-box,
-    .register-box {
+    .login-box, .register-box {
         padding: 24px 20px;
     }
 
-    .register-intro {
-        grid-row: 1;
+    .contact-info, .contact-form-box {
+        padding: 22px;
+    }
+}
+
+/* 4. MOBILE NHỎ (≤ 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding-left: 12px;
+        padding-right: 12px;
     }
 
-        .login-intro img,
-        .register-intro img {
-            height: 220px;
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+/* =======================================================
+   BỔ SUNG FIX LỖI RESPONSIVE KHI ĐĂNG NHẬP & TRANG QUẢN TRỊ
+   ======================================================= */
+
+@media (max-width: 768px) {
+    /* --- 1. XỬ LÝ HEADER KHI ĐÃ ĐĂNG NHẬP --- */
+    .user-dropdown {
+        gap: 5px !important;
+    }
+
+    .user-name {
+        display: none !important; /* Ẩn bớt chữ "Chào..." trên đt để không bị ép dòng */
+    }
+
+    .user-dropdown .btn-outline {
+        margin-left: 5px !important; /* Ghi đè margin cứng trong HTML */
+        padding: 8px 12px !important;
+    }
+
+    .header-actions .btn {
+        padding: 8px 12px !important;
+        font-size: 13px !important;
+    }
+
+    /* --- 2. XỬ LÝ TRANG QUẢN TRỊ (QuanTri.aspx) --- */
+    .account-layout {
+        margin: 15px 0 !important;
+        gap: 15px !important;
+    }
+
+    .account-sidebar,
+    .account-content {
+        padding: 15px !important; /* Thu gọn padding thừa */
+    }
+
+        .account-content h2 {
+            font-size: 22px !important;
         }
+
+        .account-content p.desc {
+            margin-bottom: 15px !important;
+            padding-bottom: 10px !important;
+            font-size: 14px;
+        }
+
+        .account-sidebar a,
+        .account-sidebar .btn-logout {
+            padding: 10px !important; /* Tăng diện tích chạm, dễ bấm hơn trên màn cảm ứng */
+        }
+}
+
+/* --- 3. MÀN HÌNH ĐIỆN THOẠI NHỎ (≤ 480px) --- */
+@media (max-width: 480px) {
+    .user-dropdown .btn-outline,
+    .header-actions .btn {
+        padding: 7px 10px !important; /* Thu nhỏ 2 nút trên Header thêm 1 chút */
+        font-size: 12px !important;
+    }
+
+    .header-actions {
+        margin-right: 5px !important;
+    }
 }

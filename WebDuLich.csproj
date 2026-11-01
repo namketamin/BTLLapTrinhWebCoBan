@@ -76,7 +76,7 @@
     <Content Include="index.aspx" />
     <Content Include="LienHe.aspx" />
     <Content Include="QuanLyTour.aspx" />
-    <Content Include="QuanTri.aspx" />
+    <Content Include="TrangCaNhan.aspx" />
     <Content Include="style.css" />
     <Content Include="ThanhToan.aspx" />
     <Content Include="Web.config" />
@@ -146,12 +146,12 @@
     <Compile Include="QuanLyTour.aspx.designer.cs">
       <DependentUpon>QuanLyTour.aspx</DependentUpon>
     </Compile>
-    <Compile Include="QuanTri.aspx.cs">
-      <DependentUpon>QuanTri.aspx</DependentUpon>
+    <Compile Include="TrangCaNhan.aspx.cs">
+      <DependentUpon>TrangCaNhan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="QuanTri.aspx.designer.cs">
-      <DependentUpon>QuanTri.aspx</DependentUpon>
+    <Compile Include="TrangCaNhan.aspx.designer.cs">
+      <DependentUpon>TrangCaNhan.aspx</DependentUpon>
     </Compile>
     <Compile Include="ThanhToan.aspx.cs">
       <DependentUpon>ThanhToan.aspx</DependentUpon>

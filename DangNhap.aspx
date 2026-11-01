@@ -49,12 +49,16 @@
                     <div id="loginForm">
                         <div class="form-group">
                             <label for="txtEmail">Email</label>
-                            <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" placeholder="Nhập email của bạn"></asp:TextBox>
+                            <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" placeholder="Nhập email của bạn" ClientIDMode="Static"></asp:TextBox>
+                            <!-- Bổ sung thẻ để hiện lỗi JS -->
+                            <small class="form-error" id="emailError" style="color:red; display:block; font-size:13px;"></small>
                         </div>
 
                         <div class="form-group">
                             <label for="txtPassword">Mật khẩu</label>
-                            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Nhập mật khẩu"></asp:TextBox>
+                            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Nhập mật khẩu" ClientIDMode="Static"></asp:TextBox>
+                            <!-- Bổ sung thẻ để hiện lỗi JS -->
+                            <small class="form-error" id="passwordError" style="color:red; display:block; font-size:13px;"></small>
                         </div>
 
                         <div class="login-options">
@@ -65,10 +69,9 @@
                             <a href="#" id="forgotPassword">Quên mật khẩu?</a>
                         </div>
 
-                        <!-- Nút đăng nhập của ASP.NET -->
-                        <asp:Button ID="btnLogin" runat="server" Text="Đăng nhập" CssClass="btn btn-primary login-button" OnClick="btnLogin_Click" />
+                        <!-- Gọi JS qua OnClientClick, nếu JS trả về true mới cho chạy tiếp C# (OnClick) -->
+                        <asp:Button ID="btnLogin" runat="server" Text="Đăng nhập" CssClass="btn btn-primary login-button" OnClientClick="return validateForm();" OnClick="btnLogin_Click" />
 
-                        <!-- Label để hiện thông báo lỗi từ server -->
                         <asp:Label ID="lblNotice" runat="server" CssClass="form-error" style="display: block; margin-top: 15px;"></asp:Label>
                     </div>
 
@@ -112,24 +115,24 @@
     const menuToggle = document.getElementById("menuToggle");
     const navbar = document.getElementById("navbar");
 
-    menuToggle.addEventListener("click", function () {
-        navbar.classList.toggle("show");
-    });
-    // Kiểm tra dữ liệu đăng nhập
-    const btnLogin = document.getElementById("btnLogin");
+    if (menuToggle && navbar) {
+        menuToggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            navbar.classList.toggle("show");
+        });
+    }
 
-    btnLogin.addEventListener("click", function () {
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value;
+    // Hàm kiểm tra form trước khi gửi lên C#
+    function validateForm() {
+        const email = document.getElementById("txtEmail").value.trim();
+        const password = document.getElementById("txtPassword").value;
 
         const emailError = document.getElementById("emailError");
         const passwordError = document.getElementById("passwordError");
-        const notice = document.getElementById("loginNotice");
 
         // Xóa thông báo cũ
         emailError.textContent = "";
         passwordError.textContent = "";
-        notice.textContent = "";
 
         let isValid = true;
 
@@ -143,24 +146,21 @@
         }
 
         // Kiểm tra mật khẩu
-        if (password.trim() === "") {
+        if (password === "") {
             passwordError.textContent = "Vui lòng nhập mật khẩu.";
             isValid = false;
         }
 
-        // Kết quả kiểm tra
-        if (isValid) {
-            notice.textContent =
-                "Thông tin hợp lệ. Chức năng đăng nhập chưa kết nối với hệ thống tài khoản.";
-        }
-    });
+        // Nếu hợp lệ, trả về true để form gửi lên C# xử lý đăng nhập Database
+        // Nếu false, form bị chặn lại ngay lập tức
+        return isValid;
+    }
 
     // Demo chức năng quên mật khẩu
     document.getElementById("forgotPassword").addEventListener("click", function (event) {
         event.preventDefault();
         alert("Vui lòng liên hệ quản trị viên để được hỗ trợ lấy lại mật khẩu.");
     });
-
 </script>
 
 </body>

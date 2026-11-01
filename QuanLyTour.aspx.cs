@@ -103,7 +103,7 @@ namespace WebDuLich
                                 hfMaTour.Value = maTour.ToString();
                                 lblTieuDeForm.Text = "Chỉnh sửa Tour";
 
-                                ClientScript.RegisterStartupScript(this.GetType(), "OpenModal", "openModal();", true);
+                                ClientScript.RegisterStartupScript(this.GetType(), "OpenModal", "setTimeout(function() { openModal(); }, 200);", true);
                             }
                         }
                     }

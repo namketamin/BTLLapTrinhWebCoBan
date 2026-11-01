@@ -33,8 +33,8 @@
                     <asp:PlaceHolder ID="phDaDangNhap" runat="server" Visible="false">
                         <div class="user-dropdown">
                             <span class="user-name">Chào, <asp:Label ID="lblTenNguoiDung" runat="server"></asp:Label>!</span>
-                            <!-- Nút vào trang quản lý -->
-                            <a href="QuanTri.aspx" class="btn-outline" style="padding: 5px 10px; margin-left: 10px;">Tài khoản</a>
+                            <!-- Nút vào trang cá nhân -->
+                            <a href="TrangCaNhan.aspx" class="btn-outline" style="padding: 5px 10px; margin-left: 10px;">Tài khoản</a>
                             
                         </div>
                     </asp:PlaceHolder>

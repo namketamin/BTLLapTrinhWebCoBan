@@ -52,7 +52,7 @@
                  <a href="index.aspx" class="logo">Viet<span>Go</span></a>
                  <div class="header-actions">
                      <span style="font-weight: 500; color: #333; margin-right: 15px;">Admin: <asp:Label ID="lblTenNguoiDung" runat="server"></asp:Label></span>
-                     <a href="QuanTri.aspx" class="btn btn-outline" style="padding: 6px 15px;">← Bảng điều khiển</a>
+                     <a href="TrangCaNhan.aspx" class="btn btn-outline" style="padding: 6px 15px;">← Bảng điều khiển</a>
                  </div>
              </div>
          </header>

@@ -60,6 +60,23 @@
                             <small class="form-error" id="phoneError" style="color:red; display:block; font-size:13px;"></small>
                         </div>
 
+                        <!--
+                        <div class="form-group">
+                             <label for="txtQueQuan">Quê quán</label>
+                             <asp:TextBox ID="txtQueQuan" runat="server" placeholder="Nhập quê quán" ClientIDMode="Static"></asp:TextBox>
+                             <small class="form-error" id="queQuanError" style="color:red; display:block; font-size:13px;"></small>
+                        </div>
+                        
+
+                        
+                        <div class="form-group">
+                             <label for="txtLopHoc">Lớp học</label>
+                             <asp:TextBox ID="txtLopHoc" runat="server" placeholder="Nhập lớp học" ClientIDMode="Static"></asp:TextBox>
+                             <small class="form-error" id="lopHocError" style="color:red; display:block; font-size:13px;"></small>
+                        </div>
+                        -->
+                        
+
                         <div class="form-group">
                             <label for="txtPassword">Mật khẩu</label>
                             <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Tối thiểu 6 ký tự" ClientIDMode="Static"></asp:TextBox>
@@ -144,6 +161,9 @@
         const confirmPassword = document.getElementById("txtConfirmPassword").value;
         const agreeTerms = document.getElementById("chkAgreeTerms").checked;
 
+        //const queQuan = document.getElementById("txtQueQuan").value.trim();
+        //const lopHoc = document.getElementById("txtLopHoc").value.trim();
+
         // Xóa thông báo lỗi cũ
         document.getElementById("nameError").textContent = "";
         document.getElementById("emailError").textContent = "";
@@ -151,6 +171,9 @@
         document.getElementById("passwordError").textContent = "";
         document.getElementById("confirmError").textContent = "";
         document.getElementById("termsError").textContent = "";
+
+        //document.getElementById("queQuanError").textContent = "";
+        //document.getElementById("lopHocError").textContent = "";
 
         let isValid = true;
 
@@ -177,6 +200,22 @@
             document.getElementById("phoneError").textContent = "Số điện thoại phải gồm 10 chữ số và bắt đầu bằng 0.";
             isValid = false;
         }
+
+        //if (queQuan === "") {
+        //    document.getElementById("queQuanError").textContent = "Vui lòng nhập quên quán.";
+        //    isValid = false;
+        //} else if (!/^[A-Za-zÀ-ỹ\s]+$/.test(queQuan)) {
+        //    document.getElementById("queQuanError").textContent = "Quê quán không được chứa số hoặc ký tự đặc biệt.";
+        //    isValid = false;
+        //}
+
+        //if (lopHoc === "") {
+        //    document.getElementById("lopHocError").textContent = "Vui lòng nhập lớp học.";
+        //    isValid = false;
+        //} else if (!/^\d{2}[A-Z]{2}\d{2}$/.test(lopHoc)) {
+        //    document.getElementById("lopHocError").textContent = "Lớp học phải theo định dạng 2 số,2 chữ hoa,2 số.";
+        //    isValid = false;
+        //}
 
         if (password.length < 6) {
             document.getElementById("passwordError").textContent = "Mật khẩu phải có ít nhất 6 ký tự.";

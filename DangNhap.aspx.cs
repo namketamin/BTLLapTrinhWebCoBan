@@ -61,8 +61,8 @@ namespace WebDuLich
                                 // Phân quyền điều hướng
                                 if (Session["Role"].ToString() == "Admin")
                                 {
-                                    // Chuyển hướng tới trang Quản trị viên (bạn cần tạo trang này sau)
-                                    Response.Redirect("QuanTri.aspx");
+                                    // Chuyển hướng tới trang cá nhân (bạn cần tạo trang này sau)
+                                    Response.Redirect("TrangCaNhan.aspx");
                                 }
                                 else
                                 {

@@ -27,6 +27,8 @@ namespace WebDuLich
             string hoTen = txtFullName.Text.Trim();
             string email = txtEmail.Text.Trim();
             string sdt = txtPhone.Text.Trim();
+            //string queQuan= txtQueQuan.Text.Trim();
+            //string lopHoc = txtLopHoc.Text.Trim();
             string matKhau = txtPassword.Text;
             string xacNhanMatKhau = txtConfirmPassword.Text;
 
@@ -79,13 +81,15 @@ namespace WebDuLich
 
                     // 2.2 Nếu Email chưa tồn tại, tiến hành lưu tài khoản mới
                     string insertQuery = @"INSERT INTO TaiKhoanNguoiDung (HoVaTen, Email, SoDienThoai, MatKhau, QuyenTruyCap) 
-                                           VALUES (@HoTen, @Email, @SDT, @MatKhau, 'User')";
+                                           VALUES (@HoTen, @Email,@SDT, @MatKhau, 'User')";
 
                     using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
                     {
                         insertCmd.Parameters.AddWithValue("@HoTen", hoTen);
                         insertCmd.Parameters.AddWithValue("@Email", email);
                         insertCmd.Parameters.AddWithValue("@SDT", sdt);
+                        //insertCmd.Parameters.AddWithValue("@QueQuan", queQuan);
+                        //insertCmd.Parameters.AddWithValue("@LopHoc", lopHoc);
                         insertCmd.Parameters.AddWithValue("@MatKhau", matKhau);
                         // *Lưu ý*: Trong thực tế bạn phải hash (băm) mật khẩu trước khi lưu.
                         // Ở đây làm đồ án cơ bản nên lưu trực tiếp.

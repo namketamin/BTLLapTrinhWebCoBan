@@ -100,10 +100,15 @@ namespace WebDuLich
 
                 if (!string.IsNullOrEmpty(diaDiemTour))
                 {
-                    string queryLienQuan = "SELECT TOP 3 MaTour, TenTour, DiaDiem, HinhAnh, GiaTour FROM Tour WHERE DiaDiem = @DiaDiem AND MaTour != @MaTourHienTai AND TrangThai = 1 ORDER BY NEWID()";
+                    // Lấy phần địa điểm đầu tiên hoặc từ khóa chính để tìm cho chuẩn (ví dụ cắt lấy chữ đầu tiên trước dấu phẩy hoặc dùng trực tiếp)
+                    // Hoặc dùng hàm LIKE để tìm kiếm xem chuỗi có chứa từ khóa địa điểm đó không:
+
+                    string queryLienQuan = "SELECT TOP 3 MaTour, TenTour, DiaDiem, HinhAnh, GiaTour FROM Tour WHERE (DiaDiem LIKE @DiaDiem OR @DiaDiem LIKE '%' + DiaDiem + '%') AND MaTour != @MaTourHienTai AND TrangThai = 1 ORDER BY NEWID()";
+
                     using (SqlCommand cmdLQ = new SqlCommand(queryLienQuan, conn))
                     {
-                        cmdLQ.Parameters.AddWithValue("@DiaDiem", diaDiemTour);
+                        // Thêm dấu % vào để SQL hiểu là "tìm kiếm xem có chứa cụm từ này hay không"
+                        cmdLQ.Parameters.AddWithValue("@DiaDiem", "%" + diaDiemTour + "%");
                         cmdLQ.Parameters.AddWithValue("@MaTourHienTai", maTour);
 
                         using (SqlDataAdapter da = new SqlDataAdapter(cmdLQ))

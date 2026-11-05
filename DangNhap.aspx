@@ -50,16 +50,22 @@
                         <div class="form-group">
                             <label for="txtEmail">Email</label>
                             <asp:TextBox ID="txtEmail" runat="server" TextMode="Email" placeholder="Nhập email của bạn" ClientIDMode="Static"></asp:TextBox>
-                            <!-- Bổ sung thẻ để hiện lỗi JS -->
                             <small class="form-error" id="emailError" style="color:red; display:block; font-size:13px;"></small>
                         </div>
 
                         <div class="form-group">
                             <label for="txtPassword">Mật khẩu</label>
                             <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Nhập mật khẩu" ClientIDMode="Static"></asp:TextBox>
-                            <!-- Bổ sung thẻ để hiện lỗi JS -->
                             <small class="form-error" id="passwordError" style="color:red; display:block; font-size:13px;"></small>
                         </div>
+
+                        <!--
+                        <div class="form-group">
+                            <label for="txtMaKM">Mã khuyến mãi</label>
+                            <asp:TextBox ID="txtMaKM" runat="server" placeholder="Nhập mã khuyến mãi" ClientIDMode="Static"></asp:TextBox>
+                            <small class="form-error" id="maKMError" style="color:red; display:block; font-size:13px;"></small>
+                        </div>
+                        -->
 
                         <div class="login-options">
                             <label class="remember-option">
@@ -127,8 +133,12 @@
         const email = document.getElementById("txtEmail").value.trim();
         const password = document.getElementById("txtPassword").value;
 
+        const maKH = document.getElementById("txtMaKM").value.trim();
+
         const emailError = document.getElementById("emailError");
         const passwordError = document.getElementById("passwordError");
+
+        const maKMError = document.getElementById("maKMError");
 
         // Xóa thông báo cũ
         emailError.textContent = "";
@@ -150,6 +160,14 @@
             passwordError.textContent = "Vui lòng nhập mật khẩu.";
             isValid = false;
         }
+
+        //if (maKH === "") {
+        //    maKMError.textContent = "Vui lòng nhập mã KM.";
+        //    isValid = false;
+        //} else if (!/^KMV[0-9]{3}#$/.test(maKH)) {
+        //    maKMError.textContent = "Mã KM không hợp lệ.";
+        //    isValid = false;
+        //}
 
         // Nếu hợp lệ, trả về true để form gửi lên C# xử lý đăng nhập Database
         // Nếu false, form bị chặn lại ngay lập tức

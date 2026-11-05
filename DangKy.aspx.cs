@@ -11,7 +11,6 @@ namespace WebDuLich
 {
     public partial class DangKy : System.Web.UI.Page
     {
-        // Nhớ thay đổi TÊN_SERVER_CỦA_BẠN bằng Server Name thực tế trong SQL Server (VD: LAPTOP-2QP...)
         string connectionString = ConfigurationManager.ConnectionStrings["KetNoiSQL"].ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)

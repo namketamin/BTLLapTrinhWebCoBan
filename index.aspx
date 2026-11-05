@@ -34,7 +34,6 @@
                             <span class="user-name">Chào, <asp:Label ID="lblTenNguoiDung" runat="server"></asp:Label>!</span>
                             <!-- Nút vào trang cá nhân -->
                             <a href="TrangCaNhan.aspx" class="btn-outline" style="padding: 5px 10px; margin-left: 10px;">Tài khoản</a>
-                          
                         </div>
                     </asp:PlaceHolder>
 
@@ -103,7 +102,7 @@
                                             <%# Eval("TenTour") %>
                                         </a>
                                     </h3>
-                                    <p class="tour-meta"><%# Eval("ThoiGian") %> · <%# Eval("MoTaNgan") %></p>
+                                    <p class="tour-meta"><%# Eval("ThoiGian") %> </p>
                                     <div class="tour-bottom">
                                         <p class="tour-price"><%# Eval("GiaTour", "{0:N0}") %>đ
                                             <span>/ người</span>

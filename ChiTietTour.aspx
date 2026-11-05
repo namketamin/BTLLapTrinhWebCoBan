@@ -35,7 +35,7 @@
                              <span class="user-name">Chào, <asp:Label ID="lblTenNguoiDung" runat="server"></asp:Label>!</span>
                              <!-- Nút vào trang cá nhân -->
                              <a href="trangcanhan.aspx" class="btn-outline" style="padding: 5px 10px; margin-left: 10px;">Tài khoản</a>
-                           
+                             
                          </div>
                      </asp:PlaceHolder>
 

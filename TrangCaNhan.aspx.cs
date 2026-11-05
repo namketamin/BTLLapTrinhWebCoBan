@@ -107,7 +107,11 @@ namespace WebDuLich
         // Xử lý sự kiện bấm Nút Đăng Xuất dạng khối ở góc dưới
         protected void btnDangXuat_Click(object sender, EventArgs e)
         {
-            Session.Clear(); // Xóa sạch mọi phiên đăng nhập
+            Session.Remove("MaNguoiDung");
+            Session.Remove("Email");
+            Session.Remove("FullName");
+            Session.Remove("Role");
+
             Response.Redirect("index.aspx");
         }
 

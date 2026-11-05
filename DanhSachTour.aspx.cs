@@ -234,11 +234,5 @@ namespace WebDuLich
 
         //    Response.Redirect($"DanhSachTour.aspx?keyword={keyword}&location={location}&price={mucGia}&sort={sapXep}&page=1");
         //}
-
-        protected void btnDangXuat_Click(object sender, EventArgs e)
-        {
-            Session.Clear();
-            Response.Redirect("index.aspx");
-        }
     }
 }

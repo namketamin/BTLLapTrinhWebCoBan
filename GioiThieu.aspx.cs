@@ -27,11 +27,5 @@ namespace WebDuLich
                 }
             }
         }
-        // Xử lý nút Đăng xuất
-        protected void btnDangXuat_Click(object sender, EventArgs e)
-        {
-            Session.Clear(); // Xóa phiên đăng nhập
-            Response.Redirect("index.aspx");
-        }
     }
 }

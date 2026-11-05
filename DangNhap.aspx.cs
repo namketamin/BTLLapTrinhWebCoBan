@@ -9,6 +9,12 @@ using System.Web.UI.WebControls;
 
 namespace WebDuLich
 {
+    public class KhuyenMai
+    {
+        public string MaKM { get; set; }
+        public DateTime ThoiDiemGui { get; set; }
+    }
+
     public partial class DangNhap : System.Web.UI.Page
     {
         string connectionString = ConfigurationManager.ConnectionStrings["KetNoiSQL"].ConnectionString;
@@ -57,6 +63,18 @@ namespace WebDuLich
                                 Session["Email"] = email;
                                 Session["FullName"] = reader["HoVaTen"].ToString();
                                 Session["Role"] = reader["QuyenTruyCap"].ToString(); // Lấy quyền 'Admin' hoặc 'User'
+
+                                //List<KhuyenMai> dsKM = Session["DSKM"] as List<KhuyenMai>;
+                                //if (dsKM == null)
+                                //{
+                                //    dsKM = new List<KhuyenMai>();
+                                //}
+                                //dsKM.Add(new KhuyenMai
+                                //{
+                                //    MaKM = txtMaKM.Text.Trim(),
+                                //    ThoiDiemGui = DateTime.Now
+                                //});
+                                //Session["DSKM"] = dsKM;
 
                                 // Phân quyền điều hướng
                                 if (Session["Role"].ToString() == "Admin")

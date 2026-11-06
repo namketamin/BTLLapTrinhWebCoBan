@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PromotionLog.aspx.cs" Inherits="WebDuLich.PromotionLog" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LichSu.aspx.cs" Inherits="WebDuLich.PromotionLog" %>
 <%@ Import Namespace="System.Collections.Generic" %>
 <%@ Import Namespace="WebDuLich" %>
 <!DOCTYPE html>

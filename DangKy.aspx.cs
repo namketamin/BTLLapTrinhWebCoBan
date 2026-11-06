@@ -90,14 +90,12 @@ namespace WebDuLich
                         //insertCmd.Parameters.AddWithValue("@QueQuan", queQuan);
                         //insertCmd.Parameters.AddWithValue("@LopHoc", lopHoc);
                         insertCmd.Parameters.AddWithValue("@MatKhau", matKhau);
-                        // *Lưu ý*: Trong thực tế bạn phải hash (băm) mật khẩu trước khi lưu.
-                        // Ở đây làm đồ án cơ bản nên lưu trực tiếp.
 
                         insertCmd.ExecuteNonQuery();
 
                         // Xóa trắng form và báo thành công
                         ClearForm();
-                        lblNotice.Text = "Đăng ký tài khoản thành công! Vui lòng <a href='DangNhap.aspx'>Đăng nhập</a>.";
+                        lblNotice.Text = "Đăng ký tài khoản thành công! Vui lòng <a href='DangNhap.aspx' style='color: #087fbd; text-decoration: underline; font-weight: bold;'>Đăng nhập ngay</a>.";
                         lblNotice.ForeColor = System.Drawing.Color.Green;
                     }
                 }

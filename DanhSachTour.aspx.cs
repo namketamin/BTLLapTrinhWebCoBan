@@ -95,6 +95,25 @@ namespace WebDuLich
                 }
             }
         }
+        //private void LoadDiaDiem()
+        //{
+        //    using (SqlConnection conn = new SqlConnection(connectionString))
+        //    {
+        //        string query = "SELECT MaDiaDiem, TenDiaDiem FROM DiaDiem";
+
+        //        using (SqlCommand cmd = new SqlCommand(query, conn))
+        //        {
+        //            conn.Open();
+
+        //            ddlLocation.DataSource = cmd.ExecuteReader();
+
+        //            ddlLocation.DataTextField = "TenDiaDiem";
+        //            ddlLocation.DataValueField = "MaDiaDiem";
+
+        //            ddlLocation.DataBind();
+        //        }
+        //    }
+        //}
 
         private void LoadDanhSachTour(string keyword, string location, string mucGia, string sapXep)
         {
